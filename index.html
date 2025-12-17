@@ -1,0 +1,333 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />  
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Reham Elsayed — Portfolio</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+
+<style>
+:root{
+  --space-blue:#7694c7;
+  --space-blue-2:#163a70;
+  --gold:#f5d88a;
+  --accent:#a8c0ff;
+}
+
+/* RESET & BODY */
+*{margin:0;padding:0;box-sizing:border-box;font-family:Inter,sans-serif}
+body{
+  background:linear-gradient(180deg,var(--space-blue),var(--space-blue-2));
+  color:#e8eeff;
+  overflow-x:hidden;
+  scroll-behavior:smooth;
+}
+
+/* STARS */
+.stars{position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:-1}
+.star{position:absolute;width:2px;height:2px;background:var(--gold);border-radius:50%;opacity:.8;animation:twinkle 3s infinite}
+@keyframes twinkle{0%,100%{opacity:.2}50%{opacity:1}}
+
+/* NAVBAR */
+nav{
+  position:fixed;
+  top:0;
+  width:100%;
+  padding:15px 0;
+  display:flex;
+  justify-content:center;
+  gap:35px;
+  background:rgba(3,12,29,.6);
+  backdrop-filter:blur(8px);
+  z-index:10;
+}
+nav a{
+  color:var(--gold);
+  text-decoration:none;
+  font-weight:700;
+  transition:.3s;
+}
+nav a:hover{color:var(--accent)}
+
+/* SECTIONS */
+section{
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:100px 20px;
+  flex-direction:column;
+  text-align:center;
+}
+
+/* TEXT */
+h1,h2,h3{color:var(--gold); font-weight:800;}
+h1{font-size:60px;margin-bottom:10px;letter-spacing:2px;}
+h2{font-size:48px;margin-bottom:25px;}
+h3{font-size:22px;margin-bottom:12px;}
+p{font-size:18px;line-height:1.7;color:#dbe7ff; margin-bottom:15px;}
+
+/* COVER */
+.avatar{
+  width:260px;
+  height:260px;
+  margin:25px auto;
+  border-radius:20px;
+  overflow:hidden;
+  border:3px solid rgba(245,216,138,.25);
+}
+.avatar img{width:100%;height:100%;object-fit:cover}
+
+/* EXPERIENCE & TRAINING */
+.experience-list{margin-top:20px; text-align:left;}
+
+/* SKILLS */
+.skills-section{margin-top:40px; text-align:center;}
+.skills-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:20px;
+  margin-top:15px;
+}
+.skill-card{
+  background:rgba(255,255,255,0.06);
+  padding:25px;
+  border-radius:16px;
+  transition:.3s;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+  font-size:18px;
+}
+.skill-card:hover{
+  background:var(--gold);
+  color:#000;
+  transform:translateY(-6px);
+}
+.skill-card img{width:70px;height:70px;}
+.skill-card i{font-size:28px}
+
+@media(max-width:1024px){
+  .skills-grid{grid-template-columns:repeat(2,1fr);}
+}
+@media(max-width:600px){
+  .skills-grid{grid-template-columns:1fr;}
+}
+
+/* PROJECTS */
+.projects-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(350px,1fr));
+  gap:30px;
+  margin-top:25px;
+}
+.proj{
+  background:linear-gradient(180deg,var(--space-blue),var(--space-blue-2));
+  border-radius:18px;
+  overflow:hidden;
+  box-shadow:0 0 20px rgba(245,216,138,.15);
+  transition:.4s;
+  text-decoration:none;
+  color:inherit;
+}
+.proj:hover{transform:translateY(-10px) scale(1.05)}
+.proj img{width:100%;height:200px;object-fit:cover;}
+.pbody{padding:15px;text-align:left;}
+.pbody h3{color:var(--gold);margin-bottom:6px;}
+.proj *{text-decoration:none !important; color:inherit;}
+
+/* CONTACT */
+.contact-box{max-width:700px;margin:auto;}
+input,textarea{
+  width:100%;
+  padding:15px;
+  margin:10px 0;
+  border-radius:10px;
+  border:none;
+  background:rgba(255,255,255,.05);
+  color:#fff;
+}
+button{
+  padding:14px 30px;
+  border:none;
+  border-radius:12px;
+  background:var(--gold);
+  font-weight:700;
+  cursor:pointer;
+}
+.contact-links a{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  color:#fff;
+  font-size:18px;
+  text-decoration:none;
+  transition:.3s;
+}
+.contact-links a:hover{color:var(--gold);}
+.contact-links i{font-size:24px;}
+
+/* MEDIA */
+@media(max-width:600px){
+  h1{font-size:40px;}
+  h2{font-size:32px;}
+  section{padding:80px 15px;}
+}
+</style>
+</head>
+
+<body>
+<div class="stars" id="stars"></div>
+
+<nav>
+  <a href="#cover">Cover</a>
+  <a href="#about">About</a>
+  <a href="#education">Education</a>
+  <a href="#experience">Experience</a>
+  <a href="#skills">Skills</a>
+  <a href="#projects">Projects</a>
+  <a href="#contact">Contact</a>
+</nav>
+
+<!-- COVER -->
+<section id="cover">
+    <h1>Reham Elsayed</h1>
+    <p style="font-size:26px;color:#fff">UI/UX Designer</p>
+    <div class="avatar"><img src="images/me.png"></div>
+    <p>I design simple, clean and user-centered digital experiences that focus on usability, clarity and meaningful interaction.</p>
+</section>
+
+<!-- ABOUT -->
+<section id="about" style="justify-content:flex-start;">
+    <div style="max-width:800px; margin:auto; text-align:center;">
+        <h2>About Me</h2>
+        <p>I am a UI/UX Designer focused on creating intuitive and beautiful digital products. My process starts from understanding users through research, translating insights into user flows and wireframes, and refining solutions into high-fidelity designs and prototypes.</p>
+        <p>I thrive on turning complex problems into simple, user-friendly solutions. My work emphasizes clarity, usability, and aesthetic harmony, ensuring that every interface I design not only looks good but feels intuitive. I enjoy collaborating with teams to create products that delight users and achieve business goals.</p>
+    </div>
+</section>
+
+<!-- EDUCATION -->
+<section id="education">
+    <h2>Education</h2>
+    <p>Faculty of Computers and Information — Mansoura University<br>Computer Science Department • 2023 – 2027<br>Relevant coursework: Human-Computer Interaction fundamentals, Interaction Design, Visual Design basics.</p>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+    <h2>Experience</h2>
+    <div class="experience-list" style="max-width:800px; margin:auto; text-align:left;">
+      <ul>
+        <li>Designed UI flows, wireframes, and high-fidelity screens for mobile and web projects, prioritizing clarity and user engagement.</li>
+        <li>Conducted usability checks, gathered feedback, and iterated solutions to create intuitive and satisfying user journeys.</li>
+        <li>Collaborated across teams to deliver polished prototypes and implement design improvements effectively.</li>
+      </ul>
+      <br>
+      <strong>Training:</strong>
+      <ul>
+      <div><B>- UI/UX Design Trainee — NTI</B></div>
+        <li>Participated in intensive training on User Interface and User Experience design principles, wireframing, prototyping, usability testing, and design thinking methodologies. Worked on live projects with guidance from industry mentors to enhance practical skills.</li>
+      </ul>
+    </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+    <h2>Skills</h2>
+
+    <div class="skills-section">
+      <h3>Soft Skills</h3>
+      <div class="skills-grid">
+        <div class="skill-card">Communication</div>
+        <div class="skill-card">Teamwork</div>
+        <div class="skill-card">Adaptability</div>
+        <div class="skill-card">Problem Solving</div>
+        <div class="skill-card">Attention to Detail</div>
+        <div class="skill-card">Creativity</div>
+      </div>
+    </div>
+
+    <div class="skills-section">
+      <h3>Technical Skills</h3>
+      <div class="skills-grid">
+        <div class="skill-card"><i class="fas fa-pencil-ruler"></i><br>Wireframing</div>
+        <div class="skill-card"><i class="fas fa-layer-group"></i><br>Prototyping</div>
+        <div class="skill-card"><i class="fas fa-users"></i><br>User Research</div>
+        <div class="skill-card"><i class="fas fa-lightbulb"></i><br>Design Thinking</div>
+        <div class="skill-card"><i class="fas fa-drafting-compass"></i><br>Interaction Design</div>
+      </div>
+    </div>
+
+    <div class="skills-section tools-section">
+      <h3>Tools</h3>
+      <div class="skills-grid">
+        <div class="skill-card"><img src="https://cdn-icons-png.flaticon.com/512/5968/5968705.png"><br>Figma</div>
+        <div class="skill-card"><img src="https://cdn-icons-png.flaticon.com/512/5968/5968520.png"><br>Canva</div>
+        <div class="skill-card"><img src="https://cdn-icons-png.flaticon.com/512/5968/5968381.png"><br>HTML</div>
+        <div class="skill-card"><img src="https://cdn-icons-png.flaticon.com/512/5968/5968242.png"><br>CSS</div>
+      </div>
+    </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+    <h2>Projects</h2>
+    <div class="projects-grid">
+
+      <a href="https://www.behance.net/rehamreda76" target="_blank" class="proj">
+        <img src="images/taste food.png">
+        <div class="pbody">
+          <h3>Food Ordering App <span style="font-size:14px;color:var(--accent)">2025</span></h3>
+          <p>A mobile app designed to streamline food ordering. Focused on easy navigation, clear menu browsing, quick checkout, and an engaging UI to improve user satisfaction.</p>
+        </div>
+      </a>
+
+      <a href="https://www.behance.net/rehamreda76" target="_blank" class="proj">
+        <img src="images/booking hotel.png">
+        <div class="pbody">
+          <h3>Hotel Booking App <span style="font-size:14px;color:var(--accent)">2025</span></h3>
+          <p>Designed to simplify hotel search and reservation. Features include intuitive search filters, clear room selection, smooth booking flows, and visually appealing interface for better user experience.</p>
+        </div>
+      </a>
+
+    </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+    <h2>Contact Me</h2>
+    <div class="contact-box">
+      <form>
+        <input type="text" placeholder="Your Name">
+        <input type="email" placeholder="Your Email">
+        <textarea placeholder="Your Message"></textarea>
+        <button>Send Message</button>
+      </form>
+      <div class="contact-links" style="margin-top:20px; display:flex; flex-direction:column; gap:15px;">
+        <a href="mailto:rehamreda4488@gmail.com"><i class="fas fa-envelope"></i> rehamreda4488@gmail.com</a>
+        <a href="tel:01152700672"><i class="fas fa-phone"></i> 01152700672</a>
+        <a href="https://www.linkedin.com/in/reham-elsayad-900651345" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+        <a href="https://www.behance.net/rehamreda76" target="_blank"><i class="fab fa-behance"></i> Behance</a>
+      </div>
+    </div>
+</section>
+
+<script>
+function createStars(){
+  const stars=document.getElementById("stars");
+  for(let i=0;i<150;i++){
+    const s=document.createElement("div");
+    s.className="star";
+    s.style.top=Math.random()*100+"%";
+    s.style.left=Math.random()*100+"%";
+    stars.appendChild(s);
+  }
+}
+createStars();
+</script>
+
+</body>
+</html>
